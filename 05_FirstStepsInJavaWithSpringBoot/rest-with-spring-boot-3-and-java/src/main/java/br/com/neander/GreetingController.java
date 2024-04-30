@@ -12,8 +12,15 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    /**
+     * Método Greeting da classe Greeting criado para Retornar uma Saudação
+     *
+     * @param name - Valor da variável criada e passada por parâmetro passado para o Metodo HTTP
+     * @return -
+     */
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public Greeting greeting(
+            @RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.getAndIncrement(), String.format(template, name));
     }
 }

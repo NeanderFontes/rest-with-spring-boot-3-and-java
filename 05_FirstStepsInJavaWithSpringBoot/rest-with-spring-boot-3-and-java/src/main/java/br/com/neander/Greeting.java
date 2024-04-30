@@ -1,5 +1,8 @@
 package br.com.neander;
 
+/**
+ * Arquivo para response HTML com arquivo JSON
+ */
 public class Greeting {
     private final long id;
     private final String content;
