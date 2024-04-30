@@ -1,4 +1,4 @@
-package br.com.neander;
+package br.com.neander.greeting;
 
 /**
  * Arquivo para response HTML com arquivo JSON

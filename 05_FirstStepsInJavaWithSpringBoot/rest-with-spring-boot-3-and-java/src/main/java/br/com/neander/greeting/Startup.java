@@ -1,4 +1,4 @@
-package br.com.neander;
+package br.com.neander.greeting;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
