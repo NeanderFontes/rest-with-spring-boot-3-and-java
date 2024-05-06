@@ -1,65 +1,78 @@
 package br.com.neander.calculator;
 
+
+import br.com.neander.exceptions.UnsupportedMathOperationException;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import static br.com.neander.numberconverter.NumberConverter.convertToDouble;
+import static br.com.neander.numberconverter.NumberConverter.isNumeric;
 
 public class Calculator {
 
-    private String numberOne, numberTwo;
-
-    public Calculator(String numberOne, String numberTwo) {
-        this.numberOne = numberOne;
-        this.numberTwo = numberTwo;
-    }
-
-    public Double sum(@PathVariable(value = "numberOne") String numberOne,
-                      @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
-        if (!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new Exception();
-        }
-        return convertToDouble(numberOne) + convertToDouble(numberTwo);
-    }
-
-
-
     /**
-     * Método para validar conversão String to Double
+     * Método Sum para somar valores de @param de uma request HTTP
      *
-     * @param strNumber - valor da variável a ser tratada
-     * @return valores finais em Double
-     */
-    private Double convertToDouble(String strNumber) {
-        if (strNumber == null) {
-            return 0D;
-        } else {
-            // Validar dados fracionados em formatos BR(20,0) & US(20.0)
-            String convertDoubleNumber = strNumber.replaceAll(",", ".");
-            if (isNumeric(convertDoubleNumber)) {
-                return Double.parseDouble(convertDoubleNumber);
-            }
-        }
-        return 0D;
-    }
-
-    /**
-     * Método para validar se o valor passado como parâmetro é numérico através de regex
-     *
-     * @param strNumber
+     * @param numberOne
+     * @param numberTwo
      * @return
      */
-    private boolean isNumeric(String strNumber) {
-        if (strNumber == null) {
-            return false;
-        } else {
-            String convertDoubleNumber = strNumber.replaceAll(",", ".");
-            return convertDoubleNumber.matches("[-+]?[0-9]*\\.?[0-9]+");
-        }
+    public Double sum(Double numberOne, Double numberTwo) {
+        return numberOne + numberTwo;
     }
 
-    public String getNumberOne() {
-        return numberOne;
+    /**
+     * Método subtraction para retornar a subtração entre os valores de @param de uma request HTTP
+     *
+     * @param numberOne
+     * @param numberTwo
+     * @return
+     */
+    public Double subtraction(Double numberOne, Double numberTwo) {
+        return numberOne - numberTwo;
     }
 
-    public String getNumberTwo() {
-        return numberTwo;
+    /**
+     * Método division para retornar a divisão entre os valores de @param de uma request HTTP
+     *
+     * @param numberOne
+     * @param numberTwo
+     * @return
+     */
+    public Double division(Double numberOne, Double numberTwo) {
+        return numberOne / numberTwo;
+    }
+
+    /**
+     * Método multiplication para retorar multiplicação entre os valores de @param de uma request HTTP
+     *
+     * @param numberOne
+     * @param numberTwo
+     * @return
+     */
+    public Double multiplication(Double numberOne, Double numberTwo) {
+        return numberOne * numberTwo;
+    }
+
+    /**
+     * Método Mean para retornar média dos valores da soma valores de @param de uma request HTTP
+     *
+     * @param numberOne
+     * @param numberTwo
+     * @return
+     */
+    public Double mean(Double numberOne, Double numberTwo) {
+        return (numberOne + numberTwo) / 2;
+    }
+
+    /**
+     * Método squareRoot para retornar valor da raiz quadrada de @param de uma request HTTP
+     *
+     * @param number
+     * @return
+     */
+    public Double squareRoot(Double number) {
+        return Math.sqrt(number);
     }
 }
