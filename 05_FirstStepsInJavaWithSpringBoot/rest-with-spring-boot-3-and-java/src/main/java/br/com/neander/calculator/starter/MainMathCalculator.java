@@ -1,4 +1,4 @@
-package br.com.neander.starter;
+package br.com.neander.calculator.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

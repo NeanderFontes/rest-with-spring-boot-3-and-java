@@ -1,15 +1,14 @@
-package br.com.neander.controllers;
+package br.com.neander.calculator.controllers;
 
 import br.com.neander.calculator.Calculator;
-import br.com.neander.exceptions.UnsupportedMathOperationException;
-import br.com.neander.numberconverter.NumberConverter;
+import br.com.neander.calculator.exceptions.UnsupportedMathOperationException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import static br.com.neander.numberconverter.NumberConverter.convertToDouble;
-import static br.com.neander.numberconverter.NumberConverter.isNumeric;
+import static br.com.neander.calculator.numberconverter.NumberConverter.convertToDouble;
+import static br.com.neander.calculator.numberconverter.NumberConverter.isNumeric;
 
 
 @RestController

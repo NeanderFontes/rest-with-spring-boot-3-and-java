@@ -1,7 +1,7 @@
-package br.com.neander.exceptions.handler;
+package br.com.neander.calculator.exceptions.handler;
 
-import br.com.neander.exceptions.ExceptionResponse;
-import br.com.neander.exceptions.UnsupportedMathOperationException;
+import br.com.neander.calculator.exceptions.ExceptionResponse;
+import br.com.neander.calculator.exceptions.UnsupportedMathOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package br.com.neander.exceptions;
+package br.com.neander.calculator.exceptions;
 
 import java.io.Serializable;
 import java.util.Date;

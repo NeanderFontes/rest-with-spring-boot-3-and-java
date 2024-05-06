@@ -1,14 +1,6 @@
 package br.com.neander.calculator;
 
 
-import br.com.neander.exceptions.UnsupportedMathOperationException;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import static br.com.neander.numberconverter.NumberConverter.convertToDouble;
-import static br.com.neander.numberconverter.NumberConverter.isNumeric;
-
 public class Calculator {
 
     /**

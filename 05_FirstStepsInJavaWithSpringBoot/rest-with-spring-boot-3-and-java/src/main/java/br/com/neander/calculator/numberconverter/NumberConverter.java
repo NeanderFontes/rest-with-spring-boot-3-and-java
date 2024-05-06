@@ -1,4 +1,4 @@
-package br.com.neander.numberconverter;
+package br.com.neander.calculator.numberconverter;
 
 public class NumberConverter {
 
