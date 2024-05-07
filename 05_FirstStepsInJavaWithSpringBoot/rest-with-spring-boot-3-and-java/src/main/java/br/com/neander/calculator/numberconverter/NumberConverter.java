@@ -14,8 +14,10 @@ public class NumberConverter {
         } else {
             // Validar dados fracionados em formatos BR(20,0) & US(20.0)
             String convertDoubleNumber = strNumber.replaceAll(",", ".");
-            if (isNumeric(convertDoubleNumber)) {
+            //convertDataDecimalValue(strNumber);
+            if (isNumeric(strNumber)) {
                 return Double.parseDouble(convertDoubleNumber);
+                //return Double.parseDouble(strNumber);
             }
         }
         return 0D;
@@ -32,7 +34,14 @@ public class NumberConverter {
             return false;
         } else {
             String convertDoubleNumber = strNumber.replaceAll(",", ".");
+            //convertDataDecimalValue(strNumber);
             return convertDoubleNumber.matches("[-+]?[0-9]*\\.?[0-9]+");
+            //return  strNumber.matches("[-+]?[0-9]*\\.?[0-9]+");
         }
+    }
+
+    public static String convertDataDecimalValue(String dataDecimalValue) {
+        dataDecimalValue = dataDecimalValue.replaceAll(",",".");
+        return dataDecimalValue;
     }
 }
